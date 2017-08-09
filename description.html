@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>HTML Frames</title>
+       
+
+   </head>
+	
+   <body>
+       <h1>Description</h1>
+       <p id="demo"></p>
+       <h3 id="demo1"></h3>
+       
+    <script>
+var myObj, myJSON, text, obj;
+       
+
+//Storing data:
+myObj = { "name":"HP 15-be016TU 15.6-inch Laptop (6th Gen Core i3-6006U/4GB/1TB/FreeDOS 2.0/Integrated Graphics), Turbo Silver ", "id":"p01", "specification":"<ul>"+"<li>"+"2GHz Intel Core i3-6006U 6th Gen processor"+"</li>"  +"<li>"+"4GB DDR4 RAM"+"</li>" +"<li>"+"1TB 5400rpm Serial ATA hard drive"+"</li>"+"<li>"+"15.6-inch screen,Intel HD Graphics 520"+"</li>" +"<li>"+ "2.19kg laptop"+"</li>"  +"<li>"+" HP TrueVision HD webcam with low light technology and single digital microphone"+"</li>"+"</ul>", "price":"Price:$350"};
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+//Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.name;
+ document.getElementById("demo").innerHTML = obj.specification;       
+  document.getElementById("demo1").innerHTML = obj.price;
+      
+        localStorage.setItem("obj", JSON.stringify(obj));
+ function abc(){
+        var desc_laptop= { "name":"HP 15-be016TU 15.6-inch Laptop (6th Gen Core i3-6006U/4GB/1TB/FreeDOS 2.0/Integrated Graphics), Turbo Silver ", "id":"p01", "specification":"<ul>"+"<li>"+"2GHz Intel Core i3-6006U 6th Gen processor"+"</li>"  +"<li>"+"4GB DDR4 RAM"+"</li>" +"<li>"+"1TB 5400rpm Serial ATA hard drive"+"</li>"+"<li>"+"15.6-inch screen,Intel HD Graphics 520"+"</li>" +"<li>"+ "2.19kg laptop"+"</li>"  +"<li>"+" HP TrueVision HD webcam with low light technology and single digital microphone"+"</li>"+"</ul>", "price":"Price:$350"};
+    }  
+    
+       
+      
+</script>
+    <form action="cart.html">
+    <input type="submit" value="Add to cart" />
+</form>
+       <br/>
+<form action="cart.html">
+    <input type="submit" value="Add to fav" />
+    
+</form>
+    </body>
+   
+</html>
